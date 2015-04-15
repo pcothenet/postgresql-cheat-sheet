@@ -51,5 +51,7 @@ LIMIT 20;
 ```SQL
 SELECT 
   last_autovacuum, last_autoanalyze
-FROM pg_stat_user_tables;
+FROM pg_stat_user_tables
+WHERE last_autovacuum IS NOT NULL
+ORDER BY last_autovacuum DESC;
 ```
